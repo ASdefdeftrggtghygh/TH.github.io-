@@ -1,0 +1,145 @@
+/* إعدادات أساسية للجسم */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+/* الشريط العلوي */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* أيقونة القائمة (ثلاث شخوط) */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  height: 4px;
+  background-color: white;
+}
+
+/* أيقونة الشعار */
+.logo-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* القسم الرئيسي (hero) */
+.hero {
+  text-align: center;
+  padding: 100px 20px 50px 20px;
+  background-color: #2c2f33;
+  margin-top: 70px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* القائمة الجانبية المخفية */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* المخفي في البداية */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  z-index: 200;
+  transition: right 0.3s ease;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.side-menu a:hover {
+  background-color: #444;
+}
+
+/* عند تفعيل القائمة الجانبية */
+.side-menu.active {
+  right: 0; /* تظهر عند إضافة الكلاس */
+}
+
+/* تأثير عند الضغط على الشخوط */
+.menu-icon.active span:nth-child(1) {
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+/* قائمة الشرطة المنبثقة */
+.police-menu {
+  position: relative;
+}
+
+.police-dropdown {
+  display: none;
+  flex-direction: column;
+  background-color: #444;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.police-dropdown a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.police-dropdown a:hover {
+  background-color: #555;
+}
+
+/* عند تفعيل القائمة المنبثقة للشرطة */
+.police-dropdown.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* إضافة المسافة بين العناصر */
+.police-menu {
+  margin-top: 20px;
+}

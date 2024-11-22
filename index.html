@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثوق لايف</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* استيراد الخط */
+        @font-face {
+            font-family: 'AbjadJemad'; /* اسم الخط */
+            src: url('path-to-your-font.woff2') format('woff2'); /* مسار ملف الخط */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'AbjadJemad', Arial, sans-serif; /* استخدام الخط الجديد */
+            background-color: #2c2f33;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* صفحة البداية */
+        .thug-life-container {
+            text-align: center;
+            position: relative;
+            padding: 50px;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .thug-life-name {
+            font-size: 64px; /* تكبير حجم الخط */
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+            text-align: center;
+        }
+
+        .underline {
+            width: 0%;
+            height: 2px;
+            background-color: #fff;
+            margin-top: 10px;
+            animation: moveLine 2s ease-in-out forwards;
+        }
+
+        @keyframes moveLine {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 50%;
+            }
+        }
+
+        /* الصفحة الرئيسية */
+        .main-content {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        /* القائمة الجانبية */
+        .side-menu {
+            width: 250px;
+            background-color: #57575738; /* خلفية رمادية غامقة */
+            padding-top: 20px;
+            position: absolute;
+            right: -250px; /* القائمة إلى اليمين */
+            top: 0;
+            height: 100%;
+            transition: right 0.3s ease;
+            text-align: center;
+        }
+
+        .side-menu.active {
+            right: 0;
+        }
+
+        /* الصورة الدائرية */
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            object-fit: cover;
+        }
+
+        .side-menu a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #fff;
+            margin: 5px 0;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .side-menu a:hover {
+            background-color: #555; /* تأثير التغيير في اللون عند التمرير */
+            transform: translateX(-10px); /* تأثير الحركة */
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            width: 35px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-icon span {
+            width: 100%;
+            height: 5px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- صفحة البداية -->
+    <div class="thug-life-container">
+        <div class="thug-life-name">THUG LIFE</div>
+        <div class="underline"></div>
+    </div>
+
+    <!-- الصفحة الرئيسية -->
+    <div class="main-content">
+        <header>
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <!-- القائمة الجانبية -->
+        <div class="side-menu">
+            <!-- صورة المستخدم -->
+            <img src="https://media.discordapp.net/attachments/1308462904571334777/1309467183641919511/nj6WCw5wMbQAAAABJRU5ErkJggg.png?ex=6741afd9&is=67405e59&hm=aa92bb32ca9223fb4f165a19191224a6e2cf14f49e4303a577ba8743ad5a0f61&=&format=webp&quality=lossless&width=544&height=544" alt="الصورة الشخصية" class="profile-img">
+
+            <a href="#">الرئيسية</a>
+            <a href="rules.html">القوانين</a>
+            <a href="#">الخدمات</a>
+            <a href="#">الشرطة</a>
+            <a href="#">اتصل بنا</a>
+        </div>
+
+        <section class="hero">
+            <h1>ثوق لايف</h1>
+            <p>
+                حياكم الله في سيرفر ثوق لايف المتخصص في الرول بلاي<br>
+                نحاول جاهدين تقديم أفضل تجربة للرول بلاي في الشرق الأوسط.<br>
+                انضم إلينا الآن وعيش حياتك كما تريد.
+            </p>
+        </section>
+    </div>
+
+    <script>
+        // تأخير ظهور الصفحة الرئيسية
+        setTimeout(function() {
+            document.querySelector('.thug-life-container').style.display = 'none';
+            document.querySelector('.main-content').style.display = 'block';
+        }, 3000);
+
+        // إضافة الوظيفة لتفعيل القائمة الجانبية عند الضغط على الأيقونة
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            document.querySelector('.side-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

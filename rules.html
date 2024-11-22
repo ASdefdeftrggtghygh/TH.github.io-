@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة القوانين</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #2c2f33;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* صورة الرمادي في الأعلى */
+        .header-image {
+            width: 100%;
+            height: 300px;
+            background-color: #555;
+            display: block;
+            margin-bottom: 20px;
+            display: none;  /* مخفي بعد ثانيتين */
+        }
+
+        /* اسم "Thug Life" مع الخط المتحرك */
+        .thug-life-name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 20px;
+            display: none;  /* مخفي في البداية */
+            text-align: center; /* تأكيد أن النص في المنتصف */
+        }
+
+        /* الخط المتحرك */
+        .underline {
+            width: 0%;
+            height: 2px;
+            background-color: #fff;
+            margin: 10px auto;
+            animation: moveLine 2s ease-in-out forwards;
+        }
+
+        @keyframes moveLine {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 50%;
+            }
+        }
+
+        /* القوائم */
+        .accordion {
+            background-color: #4a4a4a;
+            color: #fff;
+            cursor: pointer;
+            padding: 20px;
+            border: none;
+            text-align: right;
+            outline: none;
+            width: 100%;
+            transition: 0.4s;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: none;  /* مخفي في البداية */
+        }
+
+        .active, .accordion:hover {
+            background-color: #575757;
+        }
+
+        .panel {
+            padding: 0 20px;
+            display: none;
+            background-color: #333;
+            overflow: hidden;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .panel p {
+            margin: 20px 0;
+        }
+
+        /* اسم آخر فوق القوائم */
+        .second-name {
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 25px;
+            display: none;  /* مخفي في البداية */
+            text-align: center;
+        }
+
+        /* صورة كبيرة فوق اسم آخر */
+        .image-container {
+            width: 100%;
+            height: 200px;
+            display: none;  /* مخفي في البداية */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- صورة الرمادي في الأعلى (مخفية في البداية) -->
+    <div class="header-image"></div>
+
+    <!-- الاسم "Thug Life" مع الخط المتحرك في المنتصف -->
+    <div class="thug-life-name">
+        Thug Life
+    </div>
+    <div class="underline"></div>
+
+    <!-- الصورة الكبيرة فوق اسم آخر -->
+    <div class="image-container">
+        <img src="https://media.discordapp.net/attachments/1306735220149587989/1308784703888691250/phonto.jpg?ex=67412e7d&is=673fdcfd&hm=e213d761e7ffa3274916475af7bebf32896b41ee964fecea0e7159ea7f7a7e4b&=&format=webp&width=1411&height=655" alt="Image Above Name"> <!-- قم بتغيير الرابط إلى الصورة التي تريدها -->
+    </div>
+
+    <!-- الاسم الآخر الذي يظهر فوق القوائم -->
+    <div class="second-name">
+        Thug Life | Rules 
+    </div>
+
+    <!-- القوائم التي سيتم عرضها بعد ثانيتين -->
+    <div id="general" class="accordion">
+        General Rules
+    </div>
+    <div class="panel">
+        <p><strong>تعريف الرول بلاي:</strong></p>
+        <p>تقمص وتمثيل الشخصية باللعب قولاً وفعلاً مع مراعاة مجريات أحداث اللعبة وما يدور حولك في المنطقة، ومقارنة اللعب داخل السيرفر بالحياة الواقعية، وعدم الخروج عن الواقعية أثناء تمثيل شخصيتك.</p>
+    
+        <p><strong>تعريف الصدم بالمركبة "VDM":</strong></p>
+        <p>استخدام المركبة كسلاح لقتل الأشخاص. صدم لمركبة كل دقيقة أو الصدم على سرعة فوق ال 100 القتل عن طريق الصدم بالمركبة أو صدم المركبات ممنوع ومخالف للنظام العام للسيرفر.</p>
+    
+        <p><strong>تعريف الحياة الجديدة "NLR":</strong></p>
+        <p>في حال تم اسقاطك يمنع عليك التحدث وفي حال تم تواجدك بالشقق يجب عليك الفعل بأنك كنت مسقط وخارج من المستشفى ولا تتحدث بأي شيء آخر، ويمنع تذكر أي شيء حدث قبل اسقاطك لمدة، إلا في حال تم تذكيرك من قبل أشخاص أو مجموعة.</p>
+    
+        <p><strong>الخوف على حياتك "LAR":</strong></p>
+        <p>عدم الخوف بشكل واقعي على حياتك عندما تتعرض للتهديد بالأسلحة أو بأذى شديد من وسائل أخرى يعتبر الخوف على الحياة شيء أساسي ومهم جداً.</p>
+    
+        <p><strong>مثال:</strong></p>
+        <p>إذا كان هناك أداة تعرض حياتك للخطر.</p>
+    
+        <p><strong>القتل العشوائي "RDM":</strong></p>
+        <p>قتل الأشخاص دون سبب، تهديد، بصورة عشوائية أو بدون عداوة يعتبر القتل العشوائي ممنوع ومخالف للنظام العام للسيرفر.</p>
+    
+        <p><strong>قانون تقدير الحياة "LAR":</strong></p>
+        <p>هي الحفاظ على حياتك وحياة الآخرين، وعدم التهور، وعدم قتل الأشخاص، وعدم مقاومة المجرم أو الشرطة أو أي شخص يحمل سلاحاً مهما كان خصوصاً إذا كنت أعزل. هذا لا يمنع استخدام حق الدفاع عن النفس عند الضرورة التي تمنعك من طلب مساعدة الشرطة، وبكل الأحوال يجب محاورة اللاعب بشكل جيد والتفاوض معه قبل الشروع بأي عمل يعرض حياة اللاعب الآخر للخطر.</p>
+    
+        <p><strong>قانون الحجاز السمعي:</strong></p>
+        <p>• يمنع عليك سماع الأشخاص إذا كان بينك وبينهم مسافة (مثال: جدار، نافذة) وأمثلة أخرى.</p>
+    
+        <p><strong>قانون الكلبشة:</strong></p>
+        <p>• تذهب إلى ظهره وتضربه بيدك وتقول "أنت مكلبش" أو إذا أردت فك الكلبشة، نفس الأمر.</p>
+    
+        <p><strong>ملاحظة هامة:</strong></p>
+        <p>في حال مخالفة أي بند من البنود 9، يمكن أن تتعرض للتحذيرات أو العقوبات.</p>
+    </div>
+    
+    <div id="thug-life" class="accordion">
+        THUG LIFE | لغة
+    </div>
+    <div class="panel">
+        <p>لغة السيرفر:</p>
+        <ul>
+            <li>مات | اسقط</li>
+            <li>رتب | بطايق</li>
+            <li>باخذ درع | بلبس درع</li>
+            <li>لفت | سافر</li>
+            <li>دمجته | اصبته</li>
+            <li>بوت / مدني</li>
+            <li>لاق / اصداع</li>
+            <li>شات | غرفه</li>
+            <li>باند | سفروه</li>
+            <li>بروح وجي ا باخذ غفوه</li>
+            <li>ادمن | جمس اسود</li>
+            <li>مايك | حنجره</li>
+            <li>سناكات | ضمادات</li>
+            <li>مخالف | مسجون</li>
+        </ul>
+    </div>
+
+    <script>
+        // تأخير ظهور القوائم لمدة ثانيتين
+        setTimeout(function() {
+            // إظهار اسم "Thug Life" والخط المتحرك
+            document.querySelector(".thug-life-name").style.display = "block";  
+            document.querySelector(".underline").style.animationPlayState = "running";  
+        }, 500);
+
+        // بعد مرور ثانيتين، إخفاء "Thug Life" والخط المتحرك، وإظهار الاسم الآخر والصورة والقوائم
+        setTimeout(function() {
+            // إخفاء صورة الرمادي
+            document.querySelector(".header-image").style.display = "none";  
+            document.querySelector(".thug-life-name").style.display = "none"; 
+            document.querySelector(".second-name").style.display = "block";  // إظهار اسم آخر
+            document.querySelector(".image-container").style.display = "block";  // إظهار الصورة الكبيرة
+            document.querySelector("#general").style.display = "block";  // إظهار القوائم
+            document.querySelector("#thug-life").style.display = "block";  // إظهار قائمة "THUG LIFE"
+        }, 2000);
+
+        // إضافة وظيفة لفتح وإغلاق القوائم عند الضغط عليها
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
